@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
-import Button from '../components/button';
+import Button from '../components/Button';
+import TextInput from '../components/TextInput';
 
 /**
  * The application Home Screen.
@@ -12,7 +13,8 @@ const HomeScreen = props => {
       <Text>
         Welcome to Meal Time.
       </Text>
-      <Button>hello</Button>
+      <Button></Button>
+	  <TextInput></TextInput>
     </View>
   );
 };
