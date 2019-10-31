@@ -10,6 +10,7 @@ import store from './redux/store';
 
 // Screens
 import HomeScreen from './screens/HomeScreen';
+import SplashScreen from './screens/SplashScreen';
 
 /**
  * Define App Navigation
@@ -31,11 +32,22 @@ const AppContainer = createAppContainer(AppNavigator);
  * Main Application
  */
 const App = () => {
-  return (
-    <Provider store={store}>
-      <AppContainer />
-    </Provider>
-  );
+  const [loading, setLoading ] = useState(true);
+
+  // Splash Screen Renders after timeout
+  setTimeout(() =>{
+    setLoading(false);
+  } , 2000);
+
+  if (loading){
+    return <SplashScreen />;
+  } else {
+    return (
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    );
+  }
 };
 
 export default App;
